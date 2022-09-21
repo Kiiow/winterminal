@@ -2,11 +2,11 @@
 
 ## Installation
 
-Copy this repository in your WindowsTerminal folder: `C:\Users\<username>\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState`
+Copy this repository in your WindowsTerminal folder: `C:\Users\%USERNAME%\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState`
 
 For this configuration to work correctly you also need to install :
  - [git](https://git-scm.com/) be sure to install 'git bash' with the git installer
- - [cmder](https://cmder.app/) in `C:\Users\<username>\AppData\Roaming\cmder` folder
+ - [cmder](https://cmder.app/) in `C:\Users\%USERNAME%\AppData\Roaming\cmder` folder
 
 ## Fix
 
