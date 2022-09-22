@@ -5,11 +5,9 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{3ed9c7e2-3979-11ed-a261-0242ac120002}",
-    "disabledProfileSources": 
-    [
-        "Windows.Terminal.Azure"
-    ],
+    "disabledProfileSources": [ "Windows.Terminal.Azure" ],
     "initialCols": 135,
+	"newTabPosition": "afterCurrentTab",
     "profiles": 
     {
         "defaults": 
@@ -54,7 +52,7 @@
             {
                 "name": "cmd",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": false,
+                "hidden": false
             },
             {
                 "name": "Developer Command Prompt for VS 2019",
