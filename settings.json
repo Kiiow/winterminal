@@ -16,8 +16,10 @@
         {
             "startingDirectory": "%USERPROFILE%\\..\\..\\Workspace\\Programs",
 			"backgroundImage": "ms-appdata:///local/background/john-larson_rockwaves-min.png",
+			"tabColor": "#677db4",
+			"background": "#000a20",
             "backgroundImageOpacity": 0.05,
-            "closeOnExit": "always",
+            "closeOnExit": "graceful",
             "cursorShape": "vintage",
             "cursorColor": "#7268c9",
             "font": {
