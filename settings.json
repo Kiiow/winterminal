@@ -1,41 +1,75 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": [
+        // Useful commands
+        { "command": { "action": "copy", "singleLine": false }, "id": "User.copy.644BA8F2", "keys": "ctrl+c" },
+        { "command": "paste", "id": "User.paste", "keys": "ctrl+v" },
+        { "command": "paste", "keys": "shift+insert" },
+        { "command": "find", "keys": "ctrl+f" },
+        { "command": { "action": "newTab", "index": 0 }, "keys": "ctrl+t" },
+        { "command": { "action": "openSettings" }, "id": "User.openSettings.D3F0B923", "keys": "ctrl+comma" },
+        { "command": "openNewTabDropdown", "id": "User.openNewTabDropdown", "keys": "ctrl+shift+space" },
+        { "command": "toggleFullscreen", "id": "User.toggleFullscreen", "keys": "alt+enter" },
+        { "command": "toggleFullscreen", "keys": "f11" },
+        { "command": "closeWindow", "id": "User.closeWindow", "keys": "alt+f4" },
+        // Navigate between tabs
+        { "command": { "action": "prevTab" }, "id": "User.prevTab.0", "keys": "ctrl+shift+tab" },
+        { "command": { "action": "nextTab" }, "id": "User.nextTab.0", "keys": "ctrl+tab" },
+        // Move focus
+        { "command": { "action": "moveFocus", "direction": "up" }, "id": "User.moveFocus.6CD791B", "keys": "alt+up" },
+        { "command": { "action": "moveFocus", "direction": "right" }, "id": "User.moveFocus.87C324ED", "keys": "alt+right" },
+        { "command": { "action": "moveFocus", "direction": "down" }, "id": "User.moveFocus.F747588A", "keys": "alt+down" },
+        { "command": { "action": "moveFocus", "direction": "left" }, "id": "User.moveFocus.2A0DA8E0", "keys": "alt+left" },
+        // Resize panel
+        { "command": { "action": "resizePane", "direction": "up" }, "id": "User.resizePane.6CD791B", "keys": "alt+shift+up" },
+        { "command": { "action": "resizePane", "direction": "right" }, "id": "User.resizePane.87C324ED", "keys": "alt+shift+right" },
+        { "command": { "action": "resizePane", "direction": "down" }, "id": "User.resizePane.F747588A", "keys": "alt+shift+down" },
+        { "command": { "action": "resizePane", "direction": "left" }, "id": "User.resizePane.2A0DA8E0", "keys": "alt+shift+left" },
+        // Split panel
+        { "command": { "action": "splitPane", "split": "up" }, "id": "User.splitPane.A6751878", "keys": "alt+shift+z" },
+        { "command": { "action": "splitPane", "split": "right" }, "id": "User.splitPane.864CD510", "keys": "alt+shift+d" },
+        { "command": { "action": "splitPane", "split": "left" }, "id": "User.splitPane.A6751878", "keys": "alt+shift+q" },
+        { "command": { "action": "splitPane", "split": "down" }, "id": "User.splitPane.A6751878", "keys": "alt+shift+s" }
+    ],
     "alwaysShowTabs": true,
-    "showTerminalTitleInTitlebar": true,
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{3ed9c7e2-3979-11ed-a261-0242ac120002}",
-    "disabledProfileSources": [ "Windows.Terminal.Azure" ],
+    "disabledProfileSources": [
+        "Windows.Terminal.Azure"
+    ],
     "initialCols": 135,
-	"newTabPosition": "afterCurrentTab",
-    "profiles": 
-    {
-        "defaults": 
+    "newTabMenu": [
         {
-            "startingDirectory": "%USERPROFILE%\\..\\..\\Workspace\\Programs",
-			"backgroundImage": "ms-appdata:///local/background/john-larson_rockwaves-min.png",
-			"tabColor": "#677db4",
-			"background": "#000a20",
-            "backgroundImageOpacity": 0.05,
+            "type": "remainingProfiles"
+        }
+    ],
+    "newTabPosition": "afterCurrentTab",
+    "profiles": {
+        "defaults": {
+            "background": "#202022",
+            "backgroundImage": "ms-appdata:///local/background/john-larson_rockwaves-min.png",
+            "backgroundImageOpacity": 0,
             "closeOnExit": "graceful",
+            "cursorColor": "#7268C9",
             "cursorShape": "vintage",
-            "cursorColor": "#7268c9",
             "font": {
                 "face": "Cascadia Code",
                 "size": 10
             },
+            "opacity": 60,
             "padding": "8",
-            "opacity": 90,
+            "startingDirectory": "%USERPROFILE%\\..\\..\\Workspace\\Programs",
+            "tabColor": "#677DB4",
             "useAcrylic": true
         },
-        "list": 
-        [
+        "list": [
             {
                 "name": "Cmder",
+                "commandline": "cmd.exe /k %CMDER_ROOT%\\vendor\\init.bat",
                 "guid": "{3ed9c7e2-3979-11ed-a261-0242ac120002}",
                 "hidden": false,
-                "commandline": "cmd.exe /k %CMDER_ROOT%\\vendor\\init.bat",
                 "icon": "ms-appdata:///local/icon/cmder.png"
             },
             {
@@ -45,9 +79,9 @@
             },
             {
                 "name": "Git Bash",
+                "commandline": "\"%PROGRAMFILES%\\git\\usr\\bin\\bash.exe\" -i -l",
                 "guid": "{dc0fff01-5272-45cb-bdbf-1cb85b18b6b7}",
                 "hidden": false,
-                "commandline": "\"%PROGRAMFILES%\\git\\usr\\bin\\bash.exe\" -i -l",
                 "icon": "ms-appdata:///local/icon/git-bash.png"
             },
             {
@@ -56,129 +90,20 @@
                 "hidden": false
             },
             {
-                "name": "Developer Command Prompt for VS 2019",
-                "guid": "{6c8647b1-f10d-5ad3-8eba-550a9c1a4d89}",
-                "hidden": true,
-                "source": "Windows.Terminal.VisualStudio"
+                "name": "Ubuntu",
+                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+                "hidden": false,
+                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
             },
             {
-                "name": "Developer PowerShell for VS 2019",
-                "guid": "{c59e46a2-48f8-5d7d-a265-cbf05197dbb6}",
+                "name": "Ubuntu",
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": true,
-                "source": "Windows.Terminal.VisualStudio"
+                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
-    "actions":
-    [	
-		// ----------------------------------------------------------------------------------------------
-		//  _____        __            _ _     _  __          _     _           _ _                 
-		// |  __ \      / _|          | | |   | |/ /         | |   (_)         | (_)                
-		// | |  | | ___| |_ __ _ _   _| | |_  | ' / ___ _   _| |__  _ _ __   __| |_ _ __   __ _ ___ 
-		// | |  | |/ _ \  _/ _` | | | | | __| |  < / _ \ | | | '_ \| | '_ \ / _` | | '_ \ / _` / __|
-		// | |__| |  __/ || (_| | |_| | | |_  | . \  __/ |_| | |_) | | | | | (_| | | | | | (_| \__ \
-		// |_____/ \___|_| \__,_|\__,_|_|\__| |_|\_\___|\__, |_.__/|_|_| |_|\__,_|_|_| |_|\__, |___/
-		//											   __/ |                             __/ |    
-		//											  |___/                             |___/     
-		// ----------------------------------------------------------------------------------------------
-		
-		//  - Application-level commands
-			// Close window
-			{ "command": "closeWindow", "keys": "alt+f4" },
-			// Find
-			{ "command": "find", "keys": "ctrl+shift+f" },
-			// Open the dropdown
-			{ "command": "openNewTabDropdown", "keys": "ctrl+shift+space" },
-			// Open settings file
-			{ "command": "openSettings", "keys": "ctrl+," },
-			// Toggle full screen
-			{ "command": "toggleFullscreen", "keys": "alt+enter" },
-			{ "command": "toggleFullscreen", "keys": "f11" },
-		
-		//  - Tab Managements commands
-			// Duplicate tab
-			{ "command": "duplicateTab", "keys": "ctrl+shift+d" },
-			// New tab
-			{ "command": "newTab", "keys": "ctrl+shift+t" },
-			{ "command": { "action": "newTab", "index": 0 }, "keys": "ctrl+shift+1" },
-			{ "command": { "action": "newTab", "index": 1 }, "keys": "ctrl+shift+2" },
-			{ "command": { "action": "newTab", "index": 2 }, "keys": "ctrl+shift+3" },
-			{ "command": { "action": "newTab", "index": 3 }, "keys": "ctrl+shift+4" },
-			{ "command": { "action": "newTab", "index": 4 }, "keys": "ctrl+shift+5" },
-			{ "command": { "action": "newTab", "index": 5 }, "keys": "ctrl+shift+6" },
-			{ "command": { "action": "newTab", "index": 6 }, "keys": "ctrl+shift+7" },
-			{ "command": { "action": "newTab", "index": 7 }, "keys": "ctrl+shift+8" },
-			{ "command": { "action": "newTab", "index": 8 }, "keys": "ctrl+shift+9" },
-			// Open next or previous tab
-			{ "command": "nextTab", "keys": "ctrl+tab" },
-			{ "command": "prevTab", "keys": "ctrl+shift+tab" },
-			// Open a specific tab
-			{ "command": { "action": "switchToTab", "index": 0 }, "keys": "ctrl+alt+1" },
-			{ "command": { "action": "switchToTab", "index": 1 }, "keys": "ctrl+alt+2" },
-			{ "command": { "action": "switchToTab", "index": 2 }, "keys": "ctrl+alt+3" },
-			{ "command": { "action": "switchToTab", "index": 3 }, "keys": "ctrl+alt+4" },
-			{ "command": { "action": "switchToTab", "index": 4 }, "keys": "ctrl+alt+5" },
-			{ "command": { "action": "switchToTab", "index": 5 }, "keys": "ctrl+alt+6" },
-			{ "command": { "action": "switchToTab", "index": 6 }, "keys": "ctrl+alt+7" },
-			{ "command": { "action": "switchToTab", "index": 7 }, "keys": "ctrl+alt+8" },
-			{ "command": { "action": "switchToTab", "index": 8 }, "keys": "ctrl+alt+9" },
-			
-		//  - Pane management commands
-			// Close pane
-			{ "command": "closePane", "keys": "ctrl+shift+w" },
-			// Move pane focus
-			{ "command": { "action": "moveFocus", "direction": "down" }, "keys": "alt+down" },
-			{ "command": { "action": "moveFocus", "direction": "left" }, "keys": "alt+left" },
-			{ "command": { "action": "moveFocus", "direction": "right" }, "keys": "alt+right" },
-			{ "command": { "action": "moveFocus", "direction": "up" }, "keys": "alt+up" },
-			// Resize a Pane
-			{ "command": { "action": "resizePane", "direction": "down" }, "keys": "alt+shift+down" },
-			{ "command": { "action": "resizePane", "direction": "left" }, "keys": "alt+shift+left" },
-			{ "command": { "action": "resizePane", "direction": "right" }, "keys": "alt+shift+right" },
-			{ "command": { "action": "resizePane", "direction": "up" }, "keys": "alt+shift+up" },
-			// Split a Pane
-			{ "command": { "action": "splitPane", "split": "right"}, "keys": "alt+shift+-" },
-			{ "command": { "action": "splitPane", "split": "down"}, "keys": "alt+shift+plus" },
-			{ "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" },
-		//  - Clipboard integration commands
-			// Copy
-			{ "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
-			{ "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+shift+c" },
-			{ "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+insert" },
-			// Paste
-			{ "command": "paste", "keys": "ctrl+v" },
-			{ "command": "paste", "keys": "ctrl+shift+v" },
-			{ "command": "paste", "keys": "shift+insert" },
-			// Scrollback commands
-			{ "command": "scrollUp", "keys": "ctrl+shift+up" },
-			{ "command": "scrollDown", "keys": "ctrl+shift+down" },
-			{ "command": "scrollUpPage", "keys": "ctrl+shift+pgup" },
-			{ "command": "scrollDownPage", "keys": "ctrl+shift+pgdn" },
-		//  - Visual adjustment commands
-			// Adjust font size
-			{ "command": { "action": "adjustFontSize", "delta": 1 }, "keys": "ctrl+=" },
-			{ "command": { "action": "adjustFontSize", "delta": -1 }, "keys": "ctrl+-" },
-			// Reset font size
-			{ "command": "resetFontSize", "keys": "ctrl+0" },
-		
-		//  - Unbined Key
-			// { "command" : null, "keys" : ["...", "..."] },
-
-
-		// ----------------------------------------------------------------------------------------------
-		//    _____           _                    _  __          _     _           _ _                 
-		//   / ____|         | |                  | |/ /         | |   (_)         | (_)                
-		//   | |    _   _ ___| |_ ___  _ __ ___   | ' / ___ _   _| |__  _ _ __   __| |_ _ __   __ _ ___ 
-		//   | |   | | | / __| __/ _ \| '_ ` _ \  |  < / _ \ | | | '_ \| | '_ \ / _` | | '_ \ / _` / __|
-		//   | |___| |_| \__ \ || (_) | | | | | | | . \  __/ |_| | |_) | | | | | (_| | | | | | (_| \__ \
-		//    \_____\__,_|___/\__\___/|_| |_| |_| |_|\_\___|\__, |_.__/|_|_| |_|\__,_|_|_| |_|\__, |___/
-		//												    __/ |                             _/ |    
-		//												   |___/                            |___/    
-		// ----------------------------------------------------------------------------------------------
-			{ "command": { "action": "newTab", "index": 0 }, "keys": "ctrl+t" },
-			{ "command": "find", "keys": "ctrl+f" },
-			{ "command": "openSettings", "keys": "alt+shift+s" },
-			{ "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "ctrl+shift+d" }
-    ],
-    "schemes": [ ]
+    "schemes": [],
+    "showTerminalTitleInTitlebar": true,
+    "themes": []
 }
